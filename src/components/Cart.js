@@ -5,10 +5,10 @@ const Cart = ({cart, setCart}) => {
     const [price, setPrice] = useState(0);
 
     const handleRemove = (id) =>{
-        const arr = cart.filter((item) => item.id !== id);
-        setCart(arr)
-        handlePrice()
-    };
+      const arr = cart.filter((item) => item.id !== id);
+      setCart(arr)
+      handlePrice()
+  };
 
     const handlePrice = () => {
         let ans = 0;

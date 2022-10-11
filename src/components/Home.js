@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import list from '../source'
 import Card from './Card'
 
-const Home = ({handleClick}) => {
+const Home = () => {
     // Here I use uplifting the data:
     // const [cart, setCart] = useState([]);
     // const handleClick = (item) =>{
@@ -16,7 +16,7 @@ const Home = ({handleClick}) => {
             <div className="row mt-2">
         {
             list.map((item)=>(
-                <Card key={item.id} item={item} handleClick={handleClick} />
+                <Card key={item.id} item={item}/>
             ))
         }
          </div>

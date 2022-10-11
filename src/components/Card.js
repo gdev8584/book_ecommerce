@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { data } from '../App';
 
-const Card = ({item, handleClick}) => {
+const Card = ({item}) => {
+  const {handleClick,cart,handleRemove} = useContext(data)
     const {id, title, author, price, img} = item;
   return (
     <div className="col mt-3">
@@ -10,7 +12,8 @@ const Card = ({item, handleClick}) => {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{author}</p>
             <p className='card-text'>₹ {price}</p>
-            <button onClick={()=>handleClick(item)} className="btn btn-primary">Add to Cart</button>
+            {(cart.indexOf(item) === -1)?<button onClick={()=>handleClick(item)} className="btn btn-primary">Add to Cart</button>:
+            <button onClick={()=>handleRemove(id)}  className="btn btn-danger">Remove from Cart</button>}
         </div>
         </div>
     </div>
